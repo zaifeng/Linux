@@ -27,3 +27,23 @@ echo 的几个颜色
 $echo -e "\e[1;32m Hello World \e[0m"
 
 开始 \e[1;32m 结束回复原来 \e[0m
+
+
+shell 变量赋值
+variable=string
+需要注意的是:=两边不可以有空格，string可以不加引号
+
+export 命令用来设置环境变量
+
+常用环境变量有：PATH,HOME,PWD,USER,SHELL,UID
+
+shell if判断,condition 两边必须有空格
+
+if [ condition ];then
+    //to do
+else
+    //todo 
+fi
+
+
+
