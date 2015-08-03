@@ -79,3 +79,11 @@ read -p "prompt"#显示提示语
 逻辑条件 可以使用 and ,or 或 -a ,-o
 也可以用过test命令 来测试条件
 
+
+xargs 选项
+-d 设置分隔符
+-n 设置参数个数
+-0 以\0作为分隔符
+-I 替换结果 例如cat abc.txt|xargs -I {} rm -f {} 
+
+

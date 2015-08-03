@@ -46,4 +46,38 @@ else
 fi
 
 
+cat -s file # 压缩文件中连续空白行
+cat -n file # 显示行号
+
+find . -print   以\n为结束符打印文件名
+find . -print0  以\0为结束符
+其中-print可忽略
+
+-o或条件,-a与条件 注意括号与选项之间必须有空格
+find . \( -name "*.txt" -o -name "*.php" \) -print
+
+find 选项
+-iname  按名称忽略大小写
+-regex
+-iregex
+!           否定关键词
+-type       按文件类型搜索 f 文件 d目录 l 链接文件
+
+-atime      最近一次访问时间
+-ctime      创建时间
+-mtime      最后一次修改时间
+
+-size       +/- 2k 文件大小
+
+-delete     删除动作
+
+-user       按用户
+-perm       按权限
+
+-exec       执行命令
+{}          find结果
+
+例如 find . -name "*.sh" -exec cat {} \; 其中\; 不可缺少
+
+
 
