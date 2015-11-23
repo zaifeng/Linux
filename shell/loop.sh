@@ -1,5 +1,5 @@
 #!/bin/bash
-(find . -type f -name "*.sh")|while read line;
+(cd /root/mycodes/Linux/shell; find . -type f -name "*.sh")|sort|while read line;
 do
-    echo "++"
+    echo "++" $line
 done

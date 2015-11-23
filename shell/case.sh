@@ -12,8 +12,8 @@ case $u in
 zf|tuzi)
     echo hello $u ;;
 bendan)
-    echo hello bendan;;
+    echo hello foolish man;;
 *)
-    echo do not know you;;
+    echo "I don't know you";;
 
 esac
