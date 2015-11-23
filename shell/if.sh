@@ -1,8 +1,9 @@
 #!/bin/bash
-if [[ $1 == 1 ]]
-then
-    echo "One Input";
-else
-    echo "Not One";
-fi
 
+count="$1"
+
+if [ $count -gt 15 -o $count -lt 5 ];then
+
+   echo right
+
+fi

@@ -2,7 +2,7 @@
 
 u=$1
 
-if [[ $u == net031* ]]
+if [[ $u == "zai" -o $u == "feng" ]] 
 then
     echo Hello $u
 else
