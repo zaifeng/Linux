@@ -1,3 +1,10 @@
 #!/bin/bash
+for i in "$*"
+do
+    echo $i
+done
 
-ls -l
+for i in "$@"
+do
+    echo $i
+done
