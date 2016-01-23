@@ -9,6 +9,9 @@ elif [ -z $1 ] ||[ $1 -le 0 ] ;then
 else
     num=$1
 fi
- 
-echo -n `seq "$num"`|tr ' ' '+'
-echo `seq "$num"`|xargs -n 1|awk 'BEGIN{sum=0;}{sum += $i;}END{print "=" sum }'
+
+echo `seq $num`|tr ' ' '+'
+exit;
+echo $(expr "`seq $num`|tr ' ' '+'" )
+#echo -n `seq "$num"`|tr ' ' '+'
+#echo `seq "$num"`|xargs -n 1|awk 'BEGIN{sum=0;}{sum += $i;}END{print "=" sum }'
