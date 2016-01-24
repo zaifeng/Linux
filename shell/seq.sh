@@ -10,7 +10,10 @@ else
     num=$1
 fi
 
-echo `seq $num`|tr ' ' '+'
+#echo $(seq "$num"|tr '\n' '+')
+test1=$(echo -n `seq "$num"`|tr ' ' '+')
+hello=$(expr $test + 0 )
+echo $hello
 exit;
 echo $(expr "`seq $num`|tr ' ' '+'" )
 #echo -n `seq "$num"`|tr ' ' '+'
