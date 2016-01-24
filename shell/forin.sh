@@ -11,7 +11,7 @@ do
     #((sum=$sum+$i)) 
     #let sum=sum+i
     #sum=`expr $sum + $i`
-    sum=$[sum+i]
+    sum=$[ sum+i ]
 done ;
 #}
 

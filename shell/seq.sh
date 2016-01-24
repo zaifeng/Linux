@@ -12,7 +12,9 @@ fi
 
 #echo $(seq "$num"|tr '\n' '+')
 test1=$(echo -n `seq "$num"`|tr ' ' '+')
-hello=$(expr $test + 0 )
+echo $test1 
+exit;
+hello=$[ $test1 ]
 echo $hello
 exit;
 echo $(expr "`seq $num`|tr ' ' '+'" )
