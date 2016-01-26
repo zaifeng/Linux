@@ -160,3 +160,8 @@ read -p "please input sex[F/M]:" -n 1 sex
 echo -e "\n"
 echo "Welcome $username[$sex]"
  
+which命令
+
+相信很多人遇到过这样的事情，执行一个可执行文件，总得不到自己想要的效果
+其实，运行了其他目录的可执行文件，其实运行了不同目录的文件，通过which命令可以查看
+可执行文件的目录
