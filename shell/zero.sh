@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# -z 如果判断条件为空则返回真
+# -z 如果字符内容长度等于0 ，则真
 zero=""
 if [[ -z $zero ]];then
     echo Zero Input
@@ -8,7 +8,7 @@ else
     echo Not Zero
 fi
 
-nil=""
+nil=" "
 if [[ -n $nil ]];then
     echo Not Null Input
 else
