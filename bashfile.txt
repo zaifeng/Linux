@@ -58,3 +58,7 @@ shopt命令的选项如下：
 -u 设置每一选项为off
 -q 不输出信息
 -o 
+
+
+command &>/dev/null
+This syntax redirects both standard output and error output messages to /dev/null where it is ignored by the shell.
