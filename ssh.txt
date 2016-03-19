@@ -46,3 +46,13 @@ Warning: Permanently added '<Game2> (<192.168.36.194>' (RSA) to the list of know
 [root@localhost .ssh]# ssh 192.168.36.194
 Last login: Fri Apr 22 00:56:45 2011 from 192.168.18.44
 [root@Game2 ~]# 
+
+
+
+用ssh-copy-id将公钥复制到远程机器中
+jsmith@local-host$ ssh-copy-id -i ~/.ssh/id_rsa.pub remote-host
+jsmith@remote-host's password:
+Now try logging into the machine, with "ssh 'remote-host'", and check in:
+.ssh/authorized_keys
+to make sure we haven't added extra keys that you weren't expecting.
+注意: ssh-copy-id 将key写到远程机器的 ~/ .ssh/authorized_key.文件中
