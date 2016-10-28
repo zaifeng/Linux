@@ -1,14 +1,14 @@
 #!/bin/bash
-if [ $# -lt 1 ]
-then
-    echo Please input file extension
-    exit
+if [ $# -ne 3 ];then
+    echo "Wrong Pararms"
+    exit 
 fi
-count=1
-for txt in `find . -type f -iname "*.$1"`
-do 
-    new=text-$count.${txt##*.}
-    echo Renaming $txt to $new
-    mv "$txt" "$new"
-    let count++
-done 
+
+echo target:$1
+echo extension rename:$2
+echo extension final:$3
+
+for file in `ls *.$2|xargs -n 1`;do
+    echo $file rename to ${file%.*}.$3
+    mv $file ${file%.*}.$3
+done;

@@ -1,4 +1,4 @@
-1. 判断格式
+### 判断格式 ###
 1） test 参数 文件
 
 例： test -e /root/install.log
@@ -9,7 +9,7 @@
 
 注意：中括号后面和前面需要有空格
 
-2. 判断文件类型参数
+### 判断文件类型参数 ###
 1）-d 文件：判断该文件是否存在，并且是否为目录文件
 
 2）-e 文件：判断文件是否存在
@@ -25,18 +25,19 @@
 示例：
 
 
-[root@localhost ~]# [ -d /root ] && echo yes || echo no
-yes
-[root@localhost ~]# [ -e /root/install.log ] && echo yes || echo no
-yes
-[root@localhost ~]# [ -f /root/install.log ] && echo yes || echo no
-yes
-[root@localhost ~]# [ -s /root/install.log ] && echo yes || echo no
-yes
+    [root@localhost ~]# [ -d /root ] && echo yes || echo no
+    yes
+    [root@localhost ~]# [ -e /root/install.log ] && echo yes || echo no
+    yes
+    [root@localhost ~]# [ -f /root/install.log ] && echo yes || echo no
+    yes
+    [root@localhost ~]# [ -s /root/install.log ] && echo yes || echo no
+    yes
 
  
 
-3. 判断文件权限参数
+### 判断文件权限参数 ###
+
 1）-r 文件：判断该文件是否存在，并且是否有读权限
 
 2）-w文件：判断该文件是否存在，并且是否有写权限
@@ -49,15 +50,15 @@ yes
 
 示例：
 
-[root@localhost ~]# [ -r /root/install.log ] && echo yes || echo no
-yes
-[root@localhost ~]# [ -w /root/install.log ] && echo yes || echo no
-yes
-[root@localhost ~]# [ -x /root/install.log ] && echo yes || echo no
-no
+    [root@localhost ~]# [ -r /root/install.log ] && echo yes || echo no
+    yes
+    [root@localhost ~]# [ -w /root/install.log ] && echo yes || echo no
+    yes
+    [root@localhost ~]# [ -x /root/install.log ] && echo yes || echo no
+    no
  
 
-4. 两个文件比较
+### 两个文件比较 ###
 1）文件1 -nt 文件2：判断文件1的修改时间是否比文件2的新
 
 2）文件1 -ot 文件2：判断文件1的修改是否是否比文件2的旧
@@ -66,15 +67,16 @@ no
 
 示例：
 
-[root@localhost ~]# [ /root/install.log -nt /root/install.log.syslog ] && echo yes || echo no
-yes
-[root@localhost ~]# [ /root/install.log -ot /root/install.log.syslog ] && echo yes || echo no
-no
-[root@localhost ~]# [ /root/install.log -ef /root/install.log.syslog ] && echo yes || echo no
-no
+    [root@localhost ~]# [ /root/install.log -nt /root/install.log.syslog ] && echo yes || echo no
+    yes
+    [root@localhost ~]# [ /root/install.log -ot /root/install.log.syslog ] && echo yes || echo no
+    no
+    [root@localhost ~]# [ /root/install.log -ef /root/install.log.syslog ] && echo yes || echo no
+    no
  
 
-5. 两个整数比较
+### 两个整数比较 ###
+
 1）整数1 -eq 整数2：判断是否相等
 
 2）整数1 -ne 整数2：判断是否不相等
@@ -91,21 +93,21 @@ no
 
 示例：
 
-[root@localhost ~]# [ 1 -eq 1 ] && echo yes || echo no
-yes
-[root@localhost ~]# [ 1 -ne 1 ] && echo yes || echo no
-no
-[root@localhost ~]# [ 2 -gt 1 ] && echo yes || echo no
-yes
-[root@localhost ~]# [ 2 -lt 1 ] && echo yes || echo no
-no
-[root@localhost ~]# [ 1 -ge 1 ] && echo yes || echo no
-yes
-[root@localhost ~]# [ 1 -le 1 ] && echo yes || echo no
-yes
+    [root@localhost ~]# [ 1 -eq 1 ] && echo yes || echo no
+    yes
+    [root@localhost ~]# [ 1 -ne 1 ] && echo yes || echo no
+    no
+    [root@localhost ~]# [ 2 -gt 1 ] && echo yes || echo no
+    yes
+    [root@localhost ~]# [ 2 -lt 1 ] && echo yes || echo no
+    no
+    [root@localhost ~]# [ 1 -ge 1 ] && echo yes || echo no
+    yes
+    [root@localhost ~]# [ 1 -le 1 ] && echo yes || echo no
+    yes
 
 
-6. 字符串判断
+### 字符串判断 ###
 1）-z 字符串：判断字符串是否为空
 
 2）-n 字符串：判断字符串是否非空
@@ -115,20 +117,19 @@ yes
 4）字符串1 != 字符串2：判断两个字符串是否不相等
 
 示例：
+    
+    [root@localhost ~]# str="abc"
+    [root@localhost ~]# [ -z $str ] && echo yes || echo no
+    no
+    [root@localhost ~]# [ -n $str ] && echo yes || echo no
+    yes
+    [root@localhost ~]# str2="efg"
+    [root@localhost ~]# [ "$str" == "$str2" ] && echo yes || echo no
+    no
+    [root@localhost ~]# [ "$str" != "$str2" ] && echo yes || echo no
+    yes
 
-[root@localhost ~]# str="abc"
-[root@localhost ~]# [ -z $str ] && echo yes || echo no
-no
-[root@localhost ~]# [ -n $str ] && echo yes || echo no
-yes
-[root@localhost ~]# str2="efg"
-[root@localhost ~]# [ "$str" == "$str2" ] && echo yes || echo no
-no
-[root@localhost ~]# [ "$str" != "$str2" ] && echo yes || echo no
-yes
- 
-
-7. 多重条件判断
+### 多重条件判断 ###
 1）判断1 -a 判断2：表示逻辑与，相当于and
 
 2）判断1 -o 判断2：表示逻辑或，相当于or
@@ -137,10 +138,10 @@ yes
 
 示例：
 
-[root@localhost ~]# [ 1 -eq 1 -a 1 -eq 2  ] && echo yes || echo no
-no
-[root@localhost ~]# [ 1 -eq 1 -o 1 -eq 2  ] && echo yes || echo no
-yes
-[root@localhost ~]# [ ! 1 -eq 2  ] && echo yes || echo no
-yes
+    [root@localhost ~]# [ 1 -eq 1 -a 1 -eq 2  ] && echo yes || echo no
+    no
+    [root@localhost ~]# [ 1 -eq 1 -o 1 -eq 2  ] && echo yes || echo no
+    yes
+    [root@localhost ~]# [ ! 1 -eq 2  ] && echo yes || echo no
+    yes
  
