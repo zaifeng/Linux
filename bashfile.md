@@ -1,4 +1,4 @@
-.bash_profile和.bashrc的区别(如何设置生效)
+## .bash_profile和.bashrc的区别 (如何设置生效)
 
 /etc/profile:此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行.
 并从/etc/profile.d目录的配置文件中搜集shell的设置.
@@ -16,6 +16,7 @@
 通常二者设置大致相同，所以通常前者会调用后者。
 
 设置生效：可以重启生效，也可以使用命令：source 
+
 alias php=/var/eyouim/pub/php/bin/php
 source /etc/profile
 
@@ -53,11 +54,16 @@ dotgblob 以点开始的文件名被包含在路径名扩展中
 mailwarn 显示邮件警告信息
 shopt命令的选项如下：
 
--p 显示可设置选项及当前取值
--s 设置每一选项为on
--u 设置每一选项为off
--q 不输出信息
--o 
+
+> -p 显示可设置选项及当前取值
+> 
+> -s 设置每一选项为on
+> 
+> -u 设置每一选项为off
+> 
+> -q 不输出信息
+> 
+> -o 
 
 
 command &>/dev/null
